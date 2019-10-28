@@ -1,0 +1,110 @@
+[ Diagnostic group 100 ]
+[31]    T 127 S       [ Set last position ]
+[32]    O  50 S       [ Set teleprinter into figure mode ]
+
+        [ Test 101 - E for A = 0 ]
+[33]    O  41 S       [ Output test number ]
+[34]    O  40 S
+[35]    O  41 S
+[36]    E  58 S       [ Should jump here ]
+[37]    O  54 S       [ Show that test failed
+[38]    T  31 S       [ Clear the accumulator ]
+[39]    E  55 S       [ Jump to print cr/lf ]
+[40]    P     S       [ Figure 0 ]
+[41]    Q     S       [ Figure 1 ]
+[42]    W     S       [ Figure 2 ]
+[43]    E     S       [ Figure 3 ]
+[44]    R     S       [ Figure 4 ]
+[45]    T     S       [ Figure 5 ]
+[46]    Y     S       [ Figure 6 ]
+[47]    U     S       [ Figure 7 ]
+[48]    I     S       [ Figure 8 ]
+[49]    O     S       [ Figure 9 ]
+[50]    #     S       [ Figure Shift ]
+[51]    @     S       [ Carriage return ]
+[52]    &     S       [ Line Feed ]
+[53]    Z     S       [ Plus sign ]
+[54]    A     S       [ Minus sign ]
+[55]    O  51 S       [ Print carriage return ]
+[56]    O  52 S       [ Print line feed ]
+[57]    E  61 S       [ Jump to next test ]
+[58]    O  53 S       [ Indicate test passed ]
+[59]    T  31 S       [ Clear accumulator for jump ]
+[60]    E  55 S       [ print cr/lf ]
+
+        [ Test 102 - E for A > 0 ]
+[61]    O  41 S       [ Output test number ]
+[62]    O  40 S
+[63]    O  42 S
+[64]    A  38 S       [ Load positive number into accumulator ]
+[65]    E  71 S       [ Should jump ]
+[66]    O  54 S       [ Indicate test failed ]
+[67]    O  51 S       [ Carriage return ]
+[68]    O  52 S       [ Line feed ]
+[69]    T  31 S       [ Clear accumulator ]
+[70]    E  74 S       [ Jump to next test ]
+[71]    O  53 S       [ Indicate test passed ]
+[72]    T  31 S       [ Clear accumulator ]
+[73]    E  67 S       [ Jump to print cr/lf ]
+
+        [ Test 103 - E for A < 0 ]
+[74]    O  41 S       [ Output test number ]
+[75]    O  40 S
+[76]    O  43 S
+[77]    S  38 S       [ Load Negative number into accumulator ]
+[78]    E  84 S       [ Should not jump ]
+[79]    O  53 S       [ Indicate test succeeded ]
+[80]    O  51 S       [ Carriage return ]
+[81]    O  52 S       [ Line feed ]
+[82]    T  31 S       [ Clear accumulator ]
+[83]    E  87 S       [ Jump to next test ]
+[84]    O  54 S       [ Indicate test failed ]
+[85]    T  31 S       [ Clear accumulator ]
+[86]    E  80 S       [ Jump to print cr/lf ]
+
+        [ Test 104 - G for A = 0 ]
+[87]    O  41 S       [ Output test number ]
+[88]    O  40 S
+[89]    O  44 S
+[90]    T  31 S       [ Set accumulator to zero ]
+[91]    G  97 S       [ Should not jump ]
+[92]    O  53 S       [ Indicate test succeeded ]
+[93]    O  51 S       [ Carriage return ]
+[94]    O  52 S       [ Line feed ]
+[95]    T  31 S       [ Clear accumulator ]
+[96]    E 100 S       [ Jump to next test ]
+[97]    O  54 S       [ Indicate test failed ]
+[98]    T  31 S       [ Clear accumulator ]
+[99]    E  93 S       [ Jump to print cr/lf ]
+
+        [ Test 105 - G for A > 0 ]
+[100]   O  41 S       [ Output test number ]
+[101]   O  40 S
+[102]   O  45 S
+[103]   A  38 S       [ Set accumulator to positive number ]
+[104]   G 110 S       [ Should not jump ]
+[105]   O  53 S       [ Indicate test succeeded ]
+[106]   O  51 S       [ Carriage return ]
+[107]   O  52 S       [ Line feed ]
+[108]   T  31 S       [ Clear accumulator ]
+[109]   E 113 S       [ Jump to next test ]
+[110]   O  54 S       [ Indicate test failed ]
+[111]   T  31 S       [ Clear accumulator ]
+[112]   E 106 S       [ Jump to print cr/lf ]
+
+        [ Test 106 - G for A < 0 ]
+[113]   O  41 S       [ Output test number ]
+[114]   O  40 S
+[115]   O  46 S
+[116]   S  38 S       [ Set accumulator to negative number ]
+[117]   G 123 S       [ Should jump ]
+[118]   O  54 S       [ Indicate test failed ]
+[119]   O  51 S       [ Carriage return ]
+[120]   O  52 S       [ Line feed ]
+[121]   T  31 S       [ Clear accumulator ]
+[122]   E 126 S       [ Jump to next test ]
+[123]   O  53 S       [ Indicate test succeeded ]
+[124]   T  31 S       [ Clear accumulator ]
+[125]   E 119 S       [ Jump to print cr/lf ]
+
+        Z     S

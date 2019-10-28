@@ -1,0 +1,7 @@
+*.exe
+NotMine/
+Notes/
+Dist/
+bin/
+obj/
+
